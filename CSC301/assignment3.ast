@@ -1,0 +1,61 @@
+-- Maya Geva
+
+
+-- Problem 1:
+
+load system io.
+function square
+    with [] do
+        []
+    with [h|t] do
+        [h*h] + square(t)
+    end
+--assert (square([1,2,3])==[1,4,9]).
+io @println(square([1,2,3])).
+--assert (square([0,-1,-2])==[0,1,4]).
+io @println(square([0,-1,-2])).
+
+
+-- Problem 2:
+
+function member
+    with ([], m) do
+        false
+    with ([h|t], m) do
+        if h==m do
+            true
+        else do
+            member(t, m)
+        end
+    end
+--assert(member([1,2,3], 2) == true)
+io @println(member([1,2,3], 2)).
+--assert(member([1,2,3], 5) == false)
+io @println(member([1,2,3], 5)).
+
+
+-- Extra Credit: (this is optional)
+
+function average
+    with [] do
+        0
+    with list do
+        sum(list)/length(list)
+    end
+
+function sum
+    with [] do
+        0
+    with [h|t] do
+        h + sum(t)
+    end  
+
+function length
+    with [] do
+        return 0
+    with [h|t] do
+        return 1 + length(t)
+    end
+
+--asser(average[1,2,3]==2)
+io @print(average([1,2,3]))

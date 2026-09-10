@@ -1,0 +1,50 @@
+load system io.
+-- Maya geva
+
+
+-- Problem 1:
+
+function square with input:%list do
+    input@map(lambda with e do e*e)
+end.
+assert((square [-2,0,1,2,3]) == [4,0,1,4,9]).
+assert((square [2,2.5]) == [4, 6.25]).
+assert((square []) == []).
+io @println("passed all tests for square").
+
+
+--Problem 2:
+
+function member with (input:%list, m) do
+    input@reduce(lambda with (a,e) do e==m or a,false)                      
+end.
+assert(member([1,2,3], 2)).
+assert(not member([1,2,3], 5)).
+io @println("passed all tests for member").
+
+
+--problem 3:
+
+function average with input:%list do 
+        input@reduce((lambda with (a,i) do a+i),0)/len(input) if input@0 is %integer 
+        else input@reduce((lambda with (a,i) do a+i),0.0) / toreal(len(input)) 
+end.
+
+assert((average [1, 2, 3]) == 2).
+assert((average [1, 2, 4]) == 2).
+assert((average [1.0,2.0,4.0]) > 2.333333).
+assert((average [1.0,2.0,4.0]) < 2.333334).
+io @println("passed all tests for average").
+
+
+-- problem 4:
+function map with e do 
+	lambda with l do 
+		l @map e. 
+end.
+
+assert((map (lambda with n do n + 1) [1, 2, 3]) == [2, 3, 4]).
+assert((map len ["Hello", "world"]) == [5, 5]).
+let plusone = map (lambda with n do n + 1).
+assert((plusone [1, 2, 3]) == [2, 3, 4]).
+io @println("passed all tests for map").

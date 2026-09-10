@@ -1,0 +1,2 @@
+robusta_data_url = 'https://raw.githubusercontent.com/jldbc/coffee-quality-database/master/data/robusta_data_cleaned.csv'
+achievements_url = 'https://rhodyprog4ds.github.io/BrownFall24/syllabus/achievements.html'

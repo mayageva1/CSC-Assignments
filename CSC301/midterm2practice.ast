@@ -1,0 +1,12 @@
+function implode
+    with(_,[]) do
+        return []
+    with(_,[e]) do
+        return [e]
+    with(sep) do
+
+
+function implode with input:%list,sep do
+    input@map(lambda with [] do )
+end.
+

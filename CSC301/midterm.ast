@@ -1,0 +1,23 @@
+function fib with n:%integer do
+    if not(n >= 0) do
+        throw Error("Fibonacci sequence is defined for non-negative integers.")
+    end 
+    if n == 0 do return 0 end
+    if n <= 2 do return 1 end
+    let fib_of_n_minus_2 = 0.
+    let fib_of_n_minus_1 = 1.
+    while n > 2 do
+        let (fib_of_n_minus_1, fib_of_n_minus_2) = (fib_of_n_minus_1+fib_of_n_minus_2, fib_of_n_minus_1).
+        let n = n - 1.
+    end
+    return fib_of_n_minus_1 + fib_of_n_minus_2.
+    	
+end
+
+assert(0==fib(0)).
+assert(1==fib(1)).
+assert(1==fib(2)).
+assert(2==fib(3)).
+assert(3==fib(4)).
+assert(5==fib(5)).
+assert(8==fib(6)).

@@ -1,0 +1,13 @@
+load system io.
+function listsub 
+with (_, []) do []
+with (n, [h|t]) do [h-n] + listsub(n, t)
+end.
+assert([2,5,7] == listsub(2, [4,7,9])).
+io @println("passed listsub").
+
+function listdivc with list do
+lambda with l do l @map(lambda with n do n/list)
+end.
+assert([2,3,4] == (listdivc 2 [4,7,9])).
+io @println("passed listdivc").
