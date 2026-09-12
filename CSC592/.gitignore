@@ -1,0 +1,19 @@
+# Virtual environments (the main reason for the lag)
+*.zip
+.venv/
+venv/
+env/
+ENV/
+rcenv/
+
+# Python cache files
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE configurations (Optional but helpful)
+.vscode/
+.idea/
+
+Assignment2/Dataset_PlanesCarsShips/
+Assignment3/Dataset_PlanesCarsShips/
