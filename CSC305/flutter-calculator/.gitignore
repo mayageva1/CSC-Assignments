@@ -1,0 +1,24 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+build/
+
+# Flutter SDK accidentally copied into project
+lib/flutter/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment
+.direnv/
+
+# macOS
+.DS_Store
+
+# Generated files
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+.envrc
